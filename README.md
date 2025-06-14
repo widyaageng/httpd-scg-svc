@@ -148,7 +148,7 @@ docker-compose up --build
 
 ## Authors
 
-- [Your Name or Organization]
+- WA + LELEM
 
 ---
 
