@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  httpd:
+    image: httpd:2.4
+    ports:
+      - "80:80"
+    volumes:
+      - ./httpd/httpd-docker.conf:/usr/local/apache2/conf/httpd.conf:ro
+    depends_on:
+      - gateway
+
+  gateway:
+    build: ./gateway
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./gateway/src/main/resources/application.yaml:/app/config/application.yaml
+    environment:
+      - SPRING_CONFIG_LOCATION=file:/app/config/application.yaml
+    depends_on:
+      - streamlit
+
+  streamlit:
+    build: ./streamlit
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./streamlit/index.html:/usr/local/lib/python3.11/site-packages/streamlit/static/index.html

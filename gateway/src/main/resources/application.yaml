@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: streamlit
+          uri: http://streamlit:8501
+          predicates:
+            - Path=/streamlit/**
+          filters:
+            - StripPrefix=1
+            - RewritePath=/streamlit(?<segment>.*), /${segment}

@@ -1,0 +1,38 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "yava scg",
+            "request": "launch",
+            "mainClass": "com.example.gateway.GatewayApplication",
+            "projectName": "gateway"
+        },
+        {
+            "name": "st",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "module": "streamlit",
+            "args": [
+                "run",
+                "streamlit/app.py",
+                "--server.port=8501",
+                "--server.headless=true",
+                "--server.enableCORS=false"
+            ],
+            "jinja": true,
+            "justMyCode": true
+        },
+        {
+            "name": "httpd",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/sbin/apache2",
+            "args": ["-f", "${workspaceFolder}/httpd/httpd.conf", "-DFOREGROUND"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "internalConsoleOptions": "neverOpen"
+        }
+    ]
+}
