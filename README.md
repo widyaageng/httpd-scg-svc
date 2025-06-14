@@ -148,7 +148,8 @@ docker-compose up --build
 
 ## Authors
 
-- [WA](https://github.com/widyaageng) + [LELEM](https://en.wikipedia.org/wiki/GPT-4) 
+- [![WA](https://img.shields.io/badge/GitHub-@widya-black?logo=github)](https://github.com/widya)
+- [LELEM](https://en.wikipedia.org/wiki/GPT-4) 
 
 ---
 
