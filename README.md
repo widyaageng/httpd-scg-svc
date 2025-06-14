@@ -116,7 +116,7 @@ docker-compose up --build
 
 ## Development Notes
 
-- **Spring Cloud Gateway**: Edit `application.yaml` for route changes. Rebuild the JAR and restart the container for changes to take effect.
+- **Spring Cloud Gateway**: Edit `application.yaml` for route changes. Rerun the container as application.yaml is mounted as volume.
 - **Streamlit**: Edit `app.py` and `requirements.txt` as needed. Rebuild the image for dependency changes.
 - **HTTPD**: Edit `httpd-docker.conf` for proxy or balancer changes. The config is mounted read-only in the container.
 
